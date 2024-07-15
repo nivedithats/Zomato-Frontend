@@ -1,0 +1,45 @@
+.hero{
+    min-height: 70vh;
+    background: linear-gradient(#00000042, #0000004f), url(https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png)no-repeat center;
+    background-size: cover;
+    color: #fff;
+    padding: 10px;
+}
+.main-hero img{
+    width: 250px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+.main-hero{
+   padding: 10px;
+   margin-top: 20px;
+   text-align: center;
+}
+.dropdown-toggle{
+    background: #fff !important;
+    color: rgb(39, 39, 39) !important;
+    border: none !important;
+}
+.search{
+    padding: 10px;
+    width: 60%;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+.search-input{
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    align-items: center;
+    border-left: 2px solid #ccc;
+    padding-left: 10px;
+}
+.search-input input{
+    width: 100%;
+    padding: 10px;
+    border:none;
+    outline: none;
+}
