@@ -13,7 +13,7 @@ function Categories() {
                 categoriesdata.map((item, index)=>(
                     <div className="col-md-4" key={index}>
                       <Link to={item.link}>
-                      <div className="card categorie-card h-100 overflow-hidden rounded-3">
+                      <div className="card categorie-card h-100 overflow-hidden rounded-3" data-aos="zoom-in">
                             <img src={item.image} alt={item.title} className='w-100' />
                             <div className="p-2">
                                 <span className="fs-4 d-block">{item.title}</span>
