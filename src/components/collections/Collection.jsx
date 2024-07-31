@@ -3,14 +3,20 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './style.css'
 import Aos from 'aos';
+import  Cookie  from 'js-cookie';
 
 
 function Collection() {
     const [data, setData] = useState([]);
   
     useEffect(()=>{
-            const fetch = () =>{
-                axios.get('http://localhost:3005/api/restaurants/list')
+        const token = Cookie.get('token')
+        console.log(token);
+            const fetch = async(token) =>{
+                console.log('inside', token);
+                await axios.get('http://localhost:3005/api/restaurants/list',{
+                    headers: { 'authorization': `Bearer ${(token)}` }
+                })
                 .then((res)=>{
                     setData(res.data.data)
                 })
@@ -18,7 +24,7 @@ function Collection() {
                     console.log(err);
                 })
             }
-            fetch();
+            fetch(token);
     }, [])
 
     useEffect(()=>{
@@ -37,7 +43,7 @@ function Collection() {
         </header>
         <div className="row">
                 {
-                    data.map((item, index)=>(
+                    data?.map((item, index)=>(
                         <div className="col-md-3">
                            <Link to={`/view/${item._id}`}>
                            <div className="collection-card" data-aos="fade-right">

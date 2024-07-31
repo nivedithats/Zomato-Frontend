@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import './style.css'
+import TabsPage from './Tabs';
 
 function RestaurantPage() {
     const {id} = useParams();
@@ -28,6 +29,7 @@ function RestaurantPage() {
             <p className="fs-5 text-secondary">{data.location}</p>
             <p className="text-danger fs-6">Opens in {data.openTime} - {data.closeTime}</p>
         </div>
+        <TabsPage/>
     </div>
   )
 }

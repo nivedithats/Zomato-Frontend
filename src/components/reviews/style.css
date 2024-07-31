@@ -1,0 +1,23 @@
+.review-card img{
+    width: 50px;
+}
+.review-card .btns button{
+    border: none;
+    background-color: transparent;
+    border-radius: 12px;
+    color: gray;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.review-card .btns button:hover{
+    background-color: rgba(195, 195, 195, 0.169);
+}
+.review-container{
+    background: rgb(254, 254, 254) !important;
+}
+.review-card{
+    border-bottom: 1px solid gray !important;
+    margin-bottom: 20px;
+}

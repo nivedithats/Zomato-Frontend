@@ -1,3 +1,13 @@
 .hero img{
     height: 70vh;
 }
+
+.nav-tabs .nav-link{
+    color: #727272 !important;
+    border: none !important;
+}
+.nav-item .active{
+    border: none !important;
+    border-bottom: 2px solid #ff2f2f !important;
+    color: #ff2f2f !important;
+}

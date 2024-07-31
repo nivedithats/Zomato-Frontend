@@ -5,23 +5,35 @@ import RestaurantPage from './components/RestaurantPage/RestaurantPage'
 import Home from './pages/Home/Home'
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Collection from './components/collections/Collection'
+import Login from './pages/login/Login'
+import ProtectedRoutes from './protectedRoutes/ProtectedRoutes'
+import { useAuth } from './hooks/AuthProvider'
 
 function App() {
   const display = () =>{
     toast.error("Hello World");
   }
+  const {isAuthenticated} = useAuth()
 
  
   return (
     <div>
-      <button onClick={display}>click</button>
-    <BrowserRouter>
+      
     <ToastContainer/>
     <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/view/:id' element={<RestaurantPage/>}/>
+   
+      <Route path='/login' element={<Login/>}/>
+ 
+
+      
+    <Route element={<ProtectedRoutes/>}>
+    <Route path='/' element={<Home/>}/>
+    <Route path='/view/:id' element={<RestaurantPage/>}/>
+    <Route path='/collection' element={<Collection/>}/>
+    </Route>
+
     </Routes>
-    </BrowserRouter>
     </div>
   )
 }
